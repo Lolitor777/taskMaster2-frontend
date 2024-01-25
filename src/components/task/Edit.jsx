@@ -53,8 +53,9 @@ export const Edit = () => {
       const res = await axios.get(`${URL}/consultarTareaPorId/${id}`)
       setDescription(res.data.task[0].description);
       setDue_date(res.data.task[0].due_date);
-      setPriority(res.data.task[0].id_priority);
-      setState(res.data.task[0].id_state);
+      setPriority(res.data.task[0].tb_priority.description);
+      // setState(res.data.task[0].tb_state.description);
+      console.log(priority);
     }
 
 

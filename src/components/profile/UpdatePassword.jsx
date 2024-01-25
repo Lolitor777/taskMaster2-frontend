@@ -31,15 +31,13 @@ export const UpdatePassword = () => {
 
     validatePassword( form )
 
-    const id = 15;
-
     const updatePassword = async (e) => {
         e.preventDefault();
 
         if (Object.keys(errors).length < 1) {
             
         await axios.put(`${URL}`, {
-          id,
+          id: user?.id,
           password: form.password
         });
 
