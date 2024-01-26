@@ -3,6 +3,12 @@ let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
 let regexPassword = /^.{6,15}$/;
 let regexDescription = /^.{5,250}$/;
 
+const today = new Date();
+
+const todayYear = today.getFullYear();
+const todayMonth = today.getMonth();
+const todayDay = today.getDate();
+
 
 
 export const validationsFormSignUp = (form) => {
@@ -73,7 +79,23 @@ export const validateFormTask = (form) => {
   if (!form.due_date.trim()) {
     delete errors.submit;
     errors.due_date = "El campo 'Fecha de vencimiento' es requerido";
-  } 
+  }
+
+  const date_user = new Date(form.due_date) 
+  
+
+  const date_userYear = date_user.getFullYear();
+  const date_userMonth = date_user.getMonth();
+  const date_userDay = date_user.getDate();
+
+  if (date_userYear < todayYear || 
+    (date_userYear === todayYear && (date_userMonth < todayMonth || 
+    (date_userMonth === todayMonth && (date_userDay + 1) < todayDay)))) {
+    delete errors.submit;
+    errors.due_date = "La fecha es anterior a la actual";
+  }else {
+    delete errors.due_date;
+  }
 
   return errors;
 }

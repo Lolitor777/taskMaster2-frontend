@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { toFormData } from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { SelectPriorities } from './select/SelectPriorities'
@@ -26,7 +26,7 @@ export const Create = () => {
       handleBlur,
       handleChange} = useForm(initialValues, validateFormTask);
     
-      const user = useSelector(state => state.auth.user);
+    const user = useSelector(state => state.auth.user);
 
     if (!user) {
       navigate('/')
@@ -71,6 +71,7 @@ export const Create = () => {
       }  
     }
 
+    
 
   return (
     <div className='input-container'>
@@ -101,6 +102,7 @@ export const Create = () => {
               onChange={handleChange}
               value={form.due_date}
               id='due_date'
+              
               className='form-control'
             />
           </div>
