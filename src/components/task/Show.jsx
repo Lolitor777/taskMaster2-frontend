@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import foto from "../../assets/changePassword.svg";
+import freeDay from "../../assets/free-day.png";
 
 const URL = `${import.meta.env.VITE_URL_SERVER}task`;
 
@@ -91,7 +91,7 @@ export const Show = () => {
         Object.keys(task).length < 1 ? 
         (
           <figure className="withoutTask-image">
-          <img src={foto} className="withoutTask-img" />
+          <img src={freeDay} className="withoutTask-img" />
         </figure>
       ) : (
         <div className="row">

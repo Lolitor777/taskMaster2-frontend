@@ -50,7 +50,7 @@ body {
 }
 
 .logo-image {
-    width: 50px;
+    width: 70px;
     object-fit: cover;
     object-position: center;
 }
@@ -177,7 +177,7 @@ body {
 
 .withoutTask-img {
     width: 80%;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 /*Inputs*/
