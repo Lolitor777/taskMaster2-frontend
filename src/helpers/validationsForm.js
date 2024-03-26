@@ -1,10 +1,10 @@
+
 let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
 let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
 let regexPassword = /^.{6,15}$/;
 let regexDescription = /^.{5,250}$/;
 
 const today = new Date();
-
 const todayYear = today.getFullYear();
 const todayMonth = today.getMonth();
 const todayDay = today.getDate();
@@ -83,7 +83,6 @@ export const validateFormTask = (form) => {
 
   const date_user = new Date(form.due_date) 
   
-
   const date_userYear = date_user.getFullYear();
   const date_userMonth = date_user.getMonth();
   const date_userDay = date_user.getDate();
@@ -129,4 +128,5 @@ export const validateEmail = (form) => {
 
   return errors;
 }
+
 
